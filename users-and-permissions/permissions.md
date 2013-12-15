@@ -7,4 +7,4 @@ First and foremost, data is accessed in Stretchr using keys.  You can create key
 https://project.account.stretchr.com/api/v1.1/collection?key=asdf
 ```
 
-## Permissions
+## Permission Rules

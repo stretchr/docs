@@ -3,10 +3,11 @@ There are a few features implemented in stretchr specifically for special situat
 
 Modifiers are special parameters that modify the request in some way.  This section describes the modifiers and their impact.
 
-| Modifier | Description | Example |
-| --- |
-| `method` | Tells Stretchr to treat the request as if it were made with the specified HTTP Method.  This is useful in JSONP situations where all requests must be a GET, but you want to remain RESTful. | `GET /people?method=POST` |
-| `always200=1` or `always200=true` | Tells Stretchr to always return a `200 OK` HTTP status code.  The actual status code will still be in the _Standard response object_.  This is useful for JSONp requests as some browsers ignore non-200 responses. | `GET /something-not-found?always200=1` |
+<table>
+	<tr><th> Modifier </th><th> Description </th><th> Example </th></tr>
+	<tr><td>`method` </td><td> Tells Stretchr to treat the request as if it were made with the specified HTTP Method.  This is useful in JSONP situations where all requests must be a GET, but you want to remain RESTful. </td><td> `GET /people?method=POST` </td></tr>
+	<tr><td> `always200=1` or `always200=true` </td><td> Tells Stretchr to always return a `200 OK` HTTP status code.  The actual status code will still be in the _Standard response object_.  This is useful for JSONp requests as some browsers ignore non-200 responses. </td><td> `GET /something-not-found?always200=1` </td></tr>
+</table>
 
 ### No X-HTTP-Method-Override
 

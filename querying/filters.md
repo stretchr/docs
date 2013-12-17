@@ -24,20 +24,21 @@ The general format to use for filters is
 ```
 :{fieldname}={match}
 ```
-| Type | Format | Description | Example |
-| ------------ |
-| Equal | `:{field}={value}` | Matches if `{field}` matches `{value}` | `:name=Mat` |
-| Not equal | `:{field}=!{value}` | Matches if `{field}` does not match `{value}` | `:name=!Mat` |
-| One of | `:{field}={value1},{value2},{value3}` | Matches if `{field}` matches either `{value1}`, `{value2}` or `{value3}` | `:name=Mat,Laurie,Tyler` |
-| Not one of | `:{field}=!{value1},{value2},{value3}` | Matches if `{field}` doesn't match `{value1}`, `{value2}` or `{value3}` | `:name=!Mat,Laurie,Tyler` |
-| Between | `:{field}={low}..{high}` | Matches if `{field}` is between `{low}` and `{high}` | `:age=18..30` |
-| Exists | `:{field}=*` | Matches if `{field}` is present in the resource | `:address=*` |
-| Doesn't exist | `:{field}=!*` | Matches if `{field}` is NOT present in the resource | `:address=!*` |
-| Greater than | `:{field}=>{value}` | Matches if `{field}` is greater than {value} | `:count=>5` |
-| Less than | `:{field}=<{value}` | Matches if `{field}` is less than {value} | `:count=<10` |
-| Greater than or equal to | `:{field}=>={value}` | Matches if `{field}` is greater than or equal to {value} | `:count=>=5` |
-| Less than or equal to | `:{field}=<={value}` | Matches if `{field}` is less than or equal to {value} | `:count=<=10` |
-
+<table>
+<tr><th>Type </th><th> Format </th><th> Description </th><th> Example </th></tr>
+<tr><td> Equal </td><td> `:{field}={value}` </td><td> Matches if `{field}` matches `{value}` </td><td> `:name=Mat` </td></tr>
+<tr><td> Not equal </td><td> `:{field}=!{value}` </td><td> Matches if `{field}` does not match `{value}` </td><td> `:name=!Mat` </td></tr>>
+<tr><td> One of </td><td> `:{field}={value1},{value2},{value3}` </td><td> Matches if `{field}` matches either `{value1}`, `{value2}` or `{value3}` </td><td> `:name=Mat,Laurie,Tyler` </td></tr>
+<tr><td> All of </td><td> `:{field}={value1}&:{field}={value2}` </td><td> Matches if `{field}` matches both `{value1}` and `{value2}`.  Useful for array searches</td><td> `:employees=Ryan&:employees=Tyler`</tr>
+<tr><td> Not one of </td><td> `:{field}=!{value1},{value2},{value3}` </td><td> Matches if `{field}` doesn't match `{value1}`, `{value2}` or `{value3}` </td><td> `:name=!Mat,Laurie,Tyler` </td></tr>
+<tr><td> Between </td><td> `:{field}={low}..{high}` </td><td> Matches if `{field}` is between `{low}` and `{high}` </td><td> `:age=18..30` </td></tr>
+<tr><td> Exists </td><td> `:{field}=*` </td><td> Matches if `{field}` is present in the resource </td><td> `:address=*` </td></tr>
+<tr><td> Doesn't exist </td><td> `:{field}=!*` </td><td> Matches if `{field}` is NOT present in the resource </td><td> `:address=!*` </td></tr>
+<tr><td> Greater than </td><td> `:{field}=>{value}` </td><td> Matches if `{field}` is greater than {value} </td><td> `:count=>5` </td></tr>
+<tr><td> Less than </td><td> `:{field}=<{value}` </td><td> Matches if `{field}` is less than {value} </td><td> `:count=<10` </td></tr>
+<tr><td> Greater than or equal to </td><td> `:{field}=>={value}` </td><td> Matches if `{field}` is greater than or equal to {value} </td><td> `:count=>=5` </td></tr>
+<tr><td> Less than or equal to </td><td> `:{field}=<={value}` </td><td> Matches if `{field}` is less than or equal to {value} </td><td> `:count=<=10` </td></tr>
+</table>
 ## Filtering within nested data
 Let's suppose you have a resource located at `/people/ryan` that looks like this:
 ```json

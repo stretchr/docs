@@ -1,1 +1,1 @@
-github:https://github.com/stretchr/sdk-js
+github:stretchr/sdk-js

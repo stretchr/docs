@@ -1,1 +1,1 @@
-github:https://github.com/stretchr/sdk-ruby
+github:stretchr/sdk-ruby

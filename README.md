@@ -15,7 +15,7 @@ Resources in Stretchr are schemaless data objects that can look like anything:
   "info": {
   "description": "RESTful Datastore",
   "url": "http://www.stretchr.com/"
-}￼￼
+}
 ```
 
 ### Collections of Resources
@@ -79,6 +79,7 @@ Here's where things get interesting.  Let's say you wanted to view all books acr
 Because Stretchr is RESTful, you interact with your data using the language of the web.  That means that all your basic CRUD methods apply.
 
 | Method | URL Format | Description |
+|---|---|---|
 | GET | /collection | Get all the resources inside the collection |
 | GET | /collection/id | Get a single resource |
 

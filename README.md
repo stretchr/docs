@@ -7,14 +7,14 @@ Resources in Stretchr are schemaless data objects that can look like anything:
 ```json
 {
   "~id": "1",
-￼￼"name": "Stretchr",
-￼  "version": 1,
-￼  "launched": "198641896151",
-￼  "live": true,
-￼  "domains": ["stretchr.com", "stretchr.org"],
-￼  "info": {
-￼  "description": "RESTful Datastore",
-￼  "url": "http://www.stretchr.com/"
+  "name": "Stretchr",
+  "version": 1,
+  "launched": "198641896151",
+  "live": true,
+  "domains": ["stretchr.com", "stretchr.org"],
+  "info": {
+  "description": "RESTful Datastore",
+  "url": "http://www.stretchr.com/"
 }￼￼
 ```
 
@@ -77,27 +77,27 @@ Here's where things get interesting.  Let's say you wanted to view all books acr
 
 ### HTTP Methods
 Because Stretchr is RESTful, you interact with your data using the language of the web.  That means that all your basic CRUD methods apply.
-<table>
-<tr><th>Method</th><th>URL Format</th><th>Description</th></tr>
-<tr><td>GET</td><td>/collection</td><td>Get all the resources inside the collection</td></tr>
-<tr><td>GET</td><td>/collection/id</td><td>Get a single resource</td></tr>
 
-<tr><td>PUT</td><td>/collection/id</td><td>Replace a resource with a new one.  If no resource exists at that ID, it will be created</td></tr>
-<tr><td>PUT</td><td>/collection</td><td>Replace a resource with a new one, the `~id` should be included in the body in this case</td></tr>
+| Method | URL Format | Description |
+| GET | /collection | Get all the resources inside the collection |
+| GET | /collection/id | Get a single resource |
 
-<tr><td>POST</td><td>/collection</td><td>Create a new resource in the collection.  If no `~id` is specified, it will be generated for you</td></tr>
-<tr><td>PATCH</td><td>/collection/id</td><td>Intelligently merge new data with the existing resource.  Any included data will replace existing data, but data not included will be left alone</td></tr>
+| PUT | /collection/id | Replace a resource with a new one.  If no resource exists at that ID, it will be created |
+| PUT | /collection | Replace a resource with a new one, the `~id` should be included in the body in this case |
 
-<tr><td>DELETE</td><td>/collection/id</td><td>Deletes a resource from the collection</td></tr>
-<tr><td>DELETE</td><td>/collection</td><td>Deletes the ENTIRE collection</td></tr>
-</table>
+| POST | /collection | Create a new resource in the collection.  If no `~id` is specified, it will be generated for you |
+| PATCH | /collection/id | Intelligently merge new data with the existing resource.  Any included data will replace existing data, but data not included will be left alone |
+
+| DELETE | /collection/id | Deletes a resource from the collection |
+| DELETE | /collection | Deletes the ENTIRE collection |
+
 
 ## Responses
 Stretchr responds to all requests with a standard response object, making it easy to parse out the data you need while also providing context.  Here is the standard response
 
 ```json
 {
-￼ "~status": 201,
+  "~status": 201,
   "~data": {"name":"Stretchr"},
   "~context": "context",
   "~errors": [{"message":"This is how an error looks"}],

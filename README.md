@@ -13,8 +13,9 @@ Resources in Stretchr are schemaless data objects that can look like anything:
   "live": true,
   "domains": ["stretchr.com", "stretchr.org"],
   "info": {
-  "description": "RESTful Datastore",
-  "url": "http://www.stretchr.com/"
+    "description": "RESTful Datastore",
+    "url": "http://www.stretchr.com/"
+  }
 }
 ```
 
@@ -52,6 +53,7 @@ That can be broken down as follows:
 	<tr><td>collection </td><td> The collection that you're pulling a resource from </td><td> sightings</td></tr>
 	<tr><td>child-id </td><td> A URL friendly ID for the resouce </td><td>123</td></tr>
 </table>
+
 Using the examples along the right, you'd be requesting the resource `123` inside the `sightings` collection nested under `birds/cardinals`.  To put that into a sentence, think "Tell me about the cardinal sighting with ID 123".  If you want to view all sightings, you could drop the `123` ID and think "Give me all the sightings of the cardinal".
 
 ### Nesting Data
@@ -82,13 +84,10 @@ Because Stretchr is RESTful, you interact with your data using the language of t
 |---|---|---|
 | GET | /collection | Get all the resources inside the collection |
 | GET | /collection/id | Get a single resource |
-
 | PUT | /collection/id | Replace a resource with a new one.  If no resource exists at that ID, it will be created |
 | PUT | /collection | Replace a resource with a new one, the `~id` should be included in the body in this case |
-
 | POST | /collection | Create a new resource in the collection.  If no `~id` is specified, it will be generated for you |
 | PATCH | /collection/id | Intelligently merge new data with the existing resource.  Any included data will replace existing data, but data not included will be left alone |
-
 | DELETE | /collection/id | Deletes a resource from the collection |
 | DELETE | /collection | Deletes the ENTIRE collection |
 

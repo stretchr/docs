@@ -219,6 +219,16 @@ Resource {
   * The `data` object will contain all the data of the resource.
   * The `path` describes the URL path where the resource lives, or where it will live.  This should be set by the `Request` when reading resources and should NOT include the ID.
 
+##### Making new resources
+
+You need to allow your users to create new `Resource` objects, while specifying at least the client and path.  In the Stretchr JavaScript and HTML5 SDK, this was done like this:
+
+    var resource = stretchr.at("people/1/books").new()
+
+Technically this is overkill, because the `at` method creates a `Request` object which is then discarded.  But it's worth it for the syntactical sugar.  Depending on the language, it might make more sense for you to just give them a method on the `Client` object, like the Cocoa SDK:
+
+    STResource *resource = [client newResourceWithPath:@"people/1/books"];
+
 ##### Resource ID
 
 Every resource will have a unique ID stored with the `~id` key, you should expose this explicitly through methods allowing users to easily get the value.
@@ -254,3 +264,6 @@ If your `Resource` objects track whether they are dirty or not (i.e. has anythin
       * No: Do nothing (just call the success right away)
       * Yes: Update the `Resource`
 
+#### `ResourceCollection`
+
+The `ResourceCollection` object represents a collection of `Resource` objects, as well as some metadata about the collection itself, such as the number of items, the total items,

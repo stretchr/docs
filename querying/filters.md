@@ -3,7 +3,7 @@ Due to the schemaless nested data structure of stretchr, it allows you to take a
 ```
 /companies/stretchr/people/ryan
 /bands/beatles/people/paul
-/schools/cu-boulder/classes/physics/teachers/robert-paulson
+/schools/cu-boulder/classes/physics/people/robert-paulson
 ```
 Then you have the ability to perform a global people search just by performing a `GET` on
 ```

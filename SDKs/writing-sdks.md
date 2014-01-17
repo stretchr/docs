@@ -2,6 +2,10 @@
 
 Software development kits (SDKs) are a great way to let customers interact with Stretchr's services, because they allow the end programmer to speak their own language.  If you intend to use Stretchr, and there is no existing SDK, please consider starting an SDK and contributing to the open source Stretchr community.
 
+### Who is this document for?
+
+This document is for people who will be using Stretchr's services in a language where there isn't already an SDK.  Be sure to check out our [list of SDKs on GitHub](https://github.com/search?q=%40stretchr+sdk) before embarking on writing your own.
+
 ### Goals
 
 SDKs have the following design goals:
@@ -20,6 +24,7 @@ Simply put, a Client uses a Transport to make Requests and return Responses.
   * `Request` is an action to take, create, read, update or delete
   * `Response` is the response to an action taken by a `Request`
   * `Resource` and `ResourceCollection` are objects for representing the actual data stored in Stretchr
+  * `Error` holds the message of an error that has occurred on the server
 
 Resources are a higher level concept that represent individual resources in Stretchr.  A resource is a single document.  And collections of resources are often explicltly treated in SDKs.
 
@@ -74,7 +79,7 @@ The newly created `Resource` object should have:
 
   * a path set (maybe the signature is `client.new(path)`)
   * the appropriate client set
-  
+
 Users will then add data to the resource, and call one of the action methods to create it.
 
 #### `Transport` object
@@ -99,7 +104,7 @@ Request {
   path string        // the path of the request: "people/mat/books"
   params dictionary  // a map of parameters
   filters dictionary // a map of filters
-  data object        // (optional) object containing data to send in request 
+  data object        // (optional) object containing data to send in request
   method string      // the HTTP method the request will use
 }
 ```
@@ -127,7 +132,7 @@ Once you have built a `Request` you will need to let your users perform the acti
   * create()
   * delete()
   * replace()
-  
+
 NOTE: Most of the time, users will only use the `read` method, and will instead call methods on the resource itself which will in turn call these methods.
 
 Since these methods cause some kind of communication (likely a HTTP web request), you will need to think about the best way for users to receive the response.
@@ -144,12 +149,12 @@ stretchr.at("people").read({
   error: function(response) {
     alert("Something went wrong - please try again later.");
   },
-  
+
   success: function(response) {
     var resources = response.resources();
     // do something with the people
   }
-  
+
 });
 ```
 
@@ -171,7 +176,7 @@ WATCH OUT: Stretchr responses do not contain unnecessary information, so if ther
 
 To decide if a request was successful or not, you should add a `success()` method that performs the following test:
 
-    response.status >= 100 && response.status < 400 
+    response.status >= 100 && response.status < 400
 
 Essentially, this is testing that an acceptable HTTP Status Code was returned.
 
@@ -232,5 +237,20 @@ These methods should:
   * set the appropriate HTTP method on the `Request`
   * if not a `GET`, set the `body` of the `Request`
   * ask the `Client` to make the request (which will in turn as the `Transporter` to do so)
-  
+
 However you decide to handle completion code (callbacks, blocks etc.) your action methods should also pass this through to the client.
+
+##### Capturing and using the change info
+
+Repsonses to change actions will contain a change info object.  The change info contains details about what has changed on the server for each object.  For example, if you create an object without specifying an ID, the server will generate an ID and return it in the change info.  Your `Resource` object should merge the response of the change info into its own data to ensure the data is in sync with the server.
+
+##### Save() helper method
+
+If your `Resource` objects track whether they are dirty or not (i.e. has anything changed since we loaded it from the server?) you can provide a `save()` method for your users, which essentially has the following functionality:
+
+  * Is there an ID in the data?  (i.e. has the data been saved to the server)
+    * No: Create the `Resource`
+    * Yes: Is the `Resource` dirty, i.e. has anything changed?
+      * No: Do nothing (just call the success right away)
+      * Yes: Update the `Resource`
+

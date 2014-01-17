@@ -84,10 +84,10 @@ Because Stretchr is RESTful, you interact with your data using the language of t
 |---|---|---|
 | GET | /collection | Get all the resources inside the collection |
 | GET | /collection/id | Get a single resource |
-| PUT | /collection/id | Replace a resource with a new one.  If no resource exists at that ID, it will be created |
-| PUT | /collection | Replace a resource with a new one, the `~id` should be included in the body in this case |
+| PUT | /collection/id | Replace or create a resource with a new one.  If no resource exists at that ID, it will be created |
+| PUT | /collection | Replace or create a resource with a new one, the `~id` should be included in the body in this case |
 | POST | /collection | Create a new resource in the collection.  If no `~id` is specified, it will be generated for you |
-| PATCH | /collection/id | Intelligently merge new data with the existing resource.  Any included data will replace existing data, but data not included will be left alone |
+| PATCH | /collection/id | Update data with the existing resource.  Any included data will replace existing data, but data not included will be left alone |
 | DELETE | /collection/id | Deletes a resource from the collection |
 | DELETE | /collection | Deletes the ENTIRE collection |
 

@@ -266,4 +266,12 @@ If your `Resource` objects track whether they are dirty or not (i.e. has anythin
 
 #### `ResourceCollection`
 
-The `ResourceCollection` object represents a collection of `Resource` objects, as well as some metadata about the collection itself, such as the number of items, the total items,
+The `ResourceCollection` object represents a collection of `Resource` objects, as well as some metadata about the collection itself, such as the number of items, the total items etc.
+
+```
+ResourceCollection {
+  Items int   // the number of items in this collection (i.e. len(Items))
+  Total int   // the total number of items in the entire collection
+  Items array // the
+}
+```

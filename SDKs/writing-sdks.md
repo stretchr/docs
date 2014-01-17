@@ -4,7 +4,7 @@ Software development kits (SDKs) are a great way to let customers interact with 
 
 ### Who is this document for?
 
-This document is for people who will be using Stretchr's services in a language where there isn't already an SDK.  Be sure to check out our [list of SDKs on GitHub](https://github.com/search?q=%40stretchr+sdk) before embarking on writing your own.
+This document is for people who will be using Stretchr's services in a language where there isn't already an SDK.  Be sure to check out our [list of SDKs on GitHub](https://github.com/search?q=%40stretchr+sdk) before embarking on writing your own.  And PLEASE consider getting in touch with us if you want to make your SDK official by having it included in our repos and on our website.
 
 ### Goals
 
@@ -17,7 +17,7 @@ SDKs have the following design goals:
 
 ### Concepts
 
-Simply put, a Client uses a Transport to make Requests and return Responses.
+Simply put, a Client uses a Transport to make Requests and return Responses, and you can get Resources or ResourceCollections from the Response, or you can make a Resource from a Client and save it to Stretchr.
 
   * `Client` is your apps way of talking to Stretchr
   * `Transport` is the Client's way of talking to the remote servers

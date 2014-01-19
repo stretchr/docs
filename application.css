@@ -1,8 +1,23 @@
+/**
+ * HelpPag.es stylesheet template
+ * (c) 2014 HelpPag.es and Ryan Quinn
+ *
+ * Drop this in your GitHub repository for your documentation and we'll
+ * load it with your documentation and style your docs
+ * 
+ * This will be loaded in addition to the theme you selected for your docs
+ * So make sure you've themed accordingly
+ */
+
+/**
+ * Generated from the Minimal Theme.  Change as you see fit.
+ */
+
 @import url(http://fonts.googleapis.com/css?family=Open+Sans);
 
 body.custom-css {
 	font-family: 'Open Sans', sans-serif;
-	background: url(http://www.stretchr.com/img/header1.jpg) no-repeat top center;
+	background: url(http://www.stretchr.com/img/header1.jpg) no-repeat bottom center;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -22,6 +37,10 @@ code {
 	background-size: 50px 37px;
 }
 
+.custom-css .title a:hover {
+	text-decoration:none;
+}
+
 /*Link inside the title */
 .custom-css .title a {
 	
@@ -39,8 +58,8 @@ code {
 	
 }
 
-.custom-css .nav li a {
-	
+.custom-css .nav li a:hover {
+	background: rgba(0, 0, 0, .25);
 }
 
 .custom-css #categories .non-root li {

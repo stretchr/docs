@@ -1,20 +1,34 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
 body.custom-css {
-	background: #000;
+	font-family: 'Open Sans', sans-serif;
+	background: url(http://www.stretchr.com/img/header1.jpg) no-repeat top center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: "Open Sans", sans-serif;
+	padding:.3em 0;
+}
+
+code {
+	background: #caecfc;
+	color: #2e7292;
 }
 
 /*The title of the page overall*/
 .custom-css .title {
-	
+	padding-left: 50px;
+	background: url(http://www.stretchr.com/img/stretchr-logo.png) no-repeat left center;	
+	background-size: 50px 37px;
 }
 
 /*Link inside the title */
 .custom-css .title a {
-	color:#000;
+	
 }
 
 .custom-css .muted {
-	font-size: .75em;
-	color: #999;
+	
 }
 
 /*----- Sidebar -----*/
@@ -22,26 +36,23 @@ body.custom-css {
 }
 
 .custom-css .nav li {
-	background-color:transparent;
+	
 }
 
 .custom-css .nav li a {
-	width:100%;
-	display:block;
-	cursor:pointer;
-	color:#000;
+	
 }
 
 .custom-css #categories .non-root li {
-	padding-left:10px;
+	
 }
 
 .custom-css #categories span.glyphicon {
-	margin-right:10px;
+	
 }
 
 .custom-css .nav li a:hover {
-	background: #e8e8e8;
+	
 }
 
 /*----- Page ----*/
@@ -51,30 +62,23 @@ body.custom-css {
 }
 
 .custom-css .page-template .page-container {
-	z-index: 1;
-	background-color:#f1f1f1;
+	
 }
 
 .custom-css .page-container .page {
-	position: relative;
-	padding:20px;
-	background: #fff;
-	border:1px solid #efefef;
-	font-size:1.1em;
-	line-height:1.75em;
+	
 }
 
 .custom-css .page table {
-	width:100%;
+	
 }
 
 .custom-css .page table td, .custom-css .page table th {
-	padding:5px 10px;
-	border:1px solid #e8e8e8;
+	
 }
 
 .custom-css .page table tr:nth-child(even) td {
-	background-color: #f1f1f1;
+	
 }
 
 
@@ -84,9 +88,9 @@ body.custom-css {
 
 /*----- Footer -----*/
 .custom-css .footer {
-	text-align:right;
+	
 }
 
 .custom-css .footer a {
-	color: #303030;
+	
 }

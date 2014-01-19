@@ -1,3 +1,92 @@
-body {
+body.custom-css {
 	background: #000;
+}
+
+/*The title of the page overall*/
+.custom-css .title {
+	
+}
+
+/*Link inside the title */
+.custom-css .title a {
+	color:#000;
+}
+
+.custom-css .muted {
+	font-size: .75em;
+	color: #999;
+}
+
+/*----- Sidebar -----*/
+.custom-css #categories {
+}
+
+.custom-css .nav li {
+	background-color:transparent;
+}
+
+.custom-css .nav li a {
+	width:100%;
+	display:block;
+	cursor:pointer;
+	color:#000;
+}
+
+.custom-css #categories .non-root li {
+	padding-left:10px;
+}
+
+.custom-css #categories span.glyphicon {
+	margin-right:10px;
+}
+
+.custom-css .nav li a:hover {
+	background: #e8e8e8;
+}
+
+/*----- Page ----*/
+
+.custom-css .page-template {
+
+}
+
+.custom-css .page-template .page-container {
+	z-index: 1;
+	background-color:#f1f1f1;
+}
+
+.custom-css .page-container .page {
+	position: relative;
+	padding:20px;
+	background: #fff;
+	border:1px solid #efefef;
+	font-size:1.1em;
+	line-height:1.75em;
+}
+
+.custom-css .page table {
+	width:100%;
+}
+
+.custom-css .page table td, .custom-css .page table th {
+	padding:5px 10px;
+	border:1px solid #e8e8e8;
+}
+
+.custom-css .page table tr:nth-child(even) td {
+	background-color: #f1f1f1;
+}
+
+
+.custom-css .page-template .page-info {
+
+}
+
+/*----- Footer -----*/
+.custom-css .footer {
+	text-align:right;
+}
+
+.custom-css .footer a {
+	color: #303030;
 }

@@ -30,6 +30,10 @@ code {
 	color: #2e7292;
 }
 
+.custom-css .muted {
+	color:#000;
+}
+
 /*The title of the page overall*/
 .custom-css .title {
 	padding-left: 50px;

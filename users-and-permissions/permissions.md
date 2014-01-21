@@ -22,10 +22,10 @@ Permissions in Stretchr are defined based on the path that a request takes.  Due
   }
 }
 ```
-There's a lot of powerful things goign on in those rules, so let's break it down:
+There's a lot of powerful things goign on in those rules.  We explain the features in detail below, but here's a quick breakdown:
 
  * `"accounts/{{acountId}}/***"` - You define rules based on the url path that is used to access the data.  This particular rule means that any url that starts with `accounts/any-id/` is subject to the defined rules. `{{accountId}}` defines a variable that will be passed into your rules as $accountId.
- * `"all"` - The following rules apply to all actions.  Alternatively, these could be broken out into `read`, `edit`, `create`, `delete`
+ * `"all"` - The following rules apply to all actions (create, read, update, delete)
  * `$loggedin` - Returns true if the user is logged in or false if they aren't
  * `[accounts/$accountId] - Pulls a record from the database to check values
  * `.~createdby.id` - This is the value we care about from the `[accounts/$accountId]` record.  Stretchr tracks who created/updated every object, allowing you to validate against it.
@@ -45,6 +45,16 @@ At the most basic level, a permissions rule will consist of a path, an action an
 
 Paths represent the url path used to make the request.  You can use wildcards and param values in the path.  For example, `/accounts/{{accountId}}/***` will match a request of `/accounts/1/books` and will pass `1` into the rules engine as variable `$accountId`.
 
+You can define options values using `[]`, for example: `/accounts/[id]` will match both `/accounts` and `/accounts/2`
+
+### Path Wildcards
+Rules support wildcards in path declarations.  You can do things like:
+```
+"/accounts/1/***" // Matches any path that starts with /accounts/1
+"/***/comments" // matches any path that ends in /comments
+"/***/comments/***" // matches any path that has /comments in it
+```
+
 ### Nested Paths
 
 Because Stretchr allows you to access data from multiple angles, it's important to remember that even if you block access to a books collection using `/accounts/{{accountId}}/books`, you can still access the `books` by hitting `/books`.  As a result, we recommend that all rules end with a default rule of:
@@ -58,9 +68,16 @@ Because Stretchr allows you to access data from multiple angles, it's important 
 This will ensure that all requests are blocked by default - then you can go through and allow specific nested routes as needed.
 
 ### Actions
-Rules can be limited to the action a specific request is attempting to perform.
+Rules can be limited to the action a specific request is attempting to perform.  These mostly map to your standard CRUD operations.
+
 | Action | Description |
-| `read` | standard GET request trying to read data |
+| --- | --- |
+| `create` | create new resources |
+| `read` | read resources |
+| `update` | update existing resources |
+| `delete` | delete resources |
+| `modify` | create, update and delete resources |
+| `all` | all actions |
 
 ### Accessing Data for Rules
 You can use any data in your datastack for creating rules.  We also provide a few convenience variables that are common

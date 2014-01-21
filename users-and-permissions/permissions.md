@@ -29,7 +29,7 @@ There's a lot of powerful things going on in those rules.  We explain the featur
  * `"accounts/{{acountId}}/***"` - You define rules based on the url path that is used to access the data.  This particular rule means that any url that starts with `accounts/any-id/` is subject to the defined rules. `{{accountId}}` defines a variable that will be passed into your rules as $accountId.
  * `"all"` - The following rules apply to all actions (create, read, update, delete)
  * `$loggedin` - Returns true if the user is logged in or false if they aren't
- * `[accounts/$accountId] - Pulls a record from the database to check values
+ * `[accounts/$accountId]` - Pulls a record from the database to check values
  * `.~createdby.id` - This is the value we care about from the `[accounts/$accountId]` record.  Stretchr tracks who created/updated every object, allowing you to validate against it.
  * `$their.id` - `$their` gives you access to the current users record so that you can use it for validation
  * `***` - Stretchr gives you access to all levels of your tree, so if you have data stored at `accounts/1/books`, you could also access that data by heading to `/books`.  As a result, we always create a default catch-all rule that matches every path and blocks access to it.  The above rules will block all requests that don't start with `/accounts/{{accountId}}`

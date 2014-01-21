@@ -24,7 +24,7 @@ For example, if you're app has a concept of accounts who each own their own data
   }
 }
 ```
-There's a lot of powerful things goign on in those rules.  We explain the features in detail below, but here's a quick breakdown:
+There's a lot of powerful things going on in those rules.  We explain the features in detail below, but here's a quick breakdown:
 
  * `"accounts/{{acountId}}/***"` - You define rules based on the url path that is used to access the data.  This particular rule means that any url that starts with `accounts/any-id/` is subject to the defined rules. `{{accountId}}` defines a variable that will be passed into your rules as $accountId.
  * `"all"` - The following rules apply to all actions (create, read, update, delete)

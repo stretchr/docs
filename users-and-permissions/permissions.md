@@ -9,10 +9,10 @@ First and foremost, data is accessed in Stretchr using keys.  You can create key
 https://project.account.stretchr.com/api/v1.1/collection?key=asdf
 ```
 
-## Example
+## Example Permissions
 Permissions in Stretchr are defined based on the path that a request takes.  Due to the nested datastructure of Stretchr, this gives you the ability to provide powerful rules while maintaining clear understanding of what you're releasing.
 
-For example, if you're app has a concept of accounts who each own their own data, you could nest all of that users data under their account resource, and then restrict access to only the user who owns the parent account.
+For example, if your app has a concept of accounts who each own their own data, you could nest all of that users data under their account resource, and then restrict access to only the user who owns the parent account.
 
 ```
 {

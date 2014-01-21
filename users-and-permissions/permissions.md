@@ -6,7 +6,7 @@ To setup permissions, log into your Stretchr portal, select the appropriate proj
 ## Keys
 First and foremost, data is accessed in Stretchr using keys.  You can create keys via your management portal.  To use your key, simply add it to the end of your request url.  For example:
 ```
-https://project.account.stretchr.com/api/v1.1/collection?key=asdf
+https://account.stretchr.com/api/v1.1/project/collection?key=asdf
 ```
 
 ## Example Permissions
@@ -47,7 +47,7 @@ At the most basic level, a permissions rule will consist of a path, an action an
 
 Paths represent the url path used to make the request.  You can use wildcards and param values in the path.  For example, `/accounts/{{accountId}}/***` will match a request of `/accounts/1/books` and will pass `1` into the rules engine as variable `$accountId`.
 
-You can define options values using `[]`, for example: `/accounts/[id]` will match both `/accounts` and `/accounts/2`
+You can define optional values using `[]`, for example: `/accounts/[id]` will match both `/accounts` and `/accounts/2`
 
 ### Path Wildcards
 Rules support wildcards in path declarations.  You can do things like:

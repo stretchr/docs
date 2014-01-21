@@ -46,9 +46,11 @@ A client looks like this:
 ```
 Client {
   apiKey string       // the API key: "abc123"
-  host string         // the URL host of the services: "project.company.stretchr.com"
+  account string      // the user's stretchr account
+  project string      // the project for the app
+  host string         // the URL host of the services, default: "stretchr.com"
   apiVersion string   // the API version: "1.1"
-  protocol string     // the protocol through which to access services: "https"
+  protocol string     // the protocol through which to access services, default: "https"
   transport Transport // the Transport object to use to make real requests
 }
 ```
@@ -57,9 +59,9 @@ It makes sense for the client to be responsible for interacting with the service
 
 ##### Getting the base URL
 
-Since the `Client` knows the `host`, `apiVersion` and `protocol`, it is able to generate the base url by simply concatinating the string like this:
+Since the `Client` knows the `host`, `apiVersion`, `account`, `project` and `protocol`, it is able to generate the base url by simply concatinating the string like this:
 
-    protocol + "://" + host + "/api/v" + apiVersion + "/"
+    protocol + "://" + account + "." + host + "/api/v" + apiVersion + "/" + project + "/"
 
 The `Request` object will use this when generating the full URLs.
 

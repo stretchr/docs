@@ -39,15 +39,15 @@ The ability to nest data to match real world relationships, while also maintaini
 Accessing your data inside Stretchr is done using a predictable RESTful API format.
 
 ```
-https://{project}.{account}.stretchr.com/api/{v1.1}/{parent-collection}/{parent-id}/{collection}/{child-id}
+https://{account}.stretchr.com/api/{v1.1}/{project}/{parent-collection}/{parent-id}/{collection}/{child-id}
 ```
 That can be broken down as follows:
 
 <table>
 	<tr><th>Field</th><th>Description</th><th>Example</th></tr></tr>
-	<tr><td>project </td><td> The name of your project </td><td> birdwatcher</td></tr>
 	<tr><td>account </td><td> The name of your account will be the same across all your projects </td><td> birdsinc</td></tr>
 	<tr><td>v1.1 </td><td> The version of the API you are writing against </td><td> v1.1</td></tr>
+  <tr><td>project </td><td> The name of your project </td><td> birdwatcher</td></tr>
 	<tr><td>parent-collection </td><td> The parent collection you're pulling from </td><td> birds</td></tr>
 	<tr><td>parent-id </td><td> A URL friendly ID for the parent resource </td><td> cardinal</td></tr>
 	<tr><td>collection </td><td> The collection that you're pulling a resource from </td><td> sightings</td></tr>

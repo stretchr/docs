@@ -12,7 +12,7 @@ Stretchr currently implements the following authentication methods
  * Facebook
  * Custom login _coming soon_
 
-To authenticate a user, redirect them to `your-stretchr-instance.com/~auth/auth-provider`.  We'll run them through the oauth process and return a session code that you can use to authenticate users in future requests.  Just include the auth token as `auth=TOKEN` on the end of your URL.
+To authenticate a user, redirect them to `https://account.stretchr.com/api/v1.1/project/~auth/auth-provider`.  We'll run them through the oauth process and return a session code that you can use to authenticate users in future requests.  Just include the auth token as `auth=TOKEN` on the end of your URL.
 
 This whole process is handled for you typically by the SDKs, for example, in the JS SDK you can authenticate user by simply running:
 ```

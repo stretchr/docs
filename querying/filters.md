@@ -7,11 +7,11 @@ Due to the schemaless nested data structure of stretchr, it allows you to take a
 ```
 Then you have the ability to perform a global people search just by performing a `GET` on
 ```
-https://people.random.stretchr.com/api/v1.1/people
+https://account.stretchr.com/api/v1.1/project/people
 ```
 Or, if you wanted to just get a list of people who sang in the Beatles, you could perform a `GET` on
 ```
-https://people.random.stretchr.com/api/v1.1/bands/beatles/people
+https://account.stretchr.com/api/v1.1/project/bands/beatles/people
 ```
 ## Parameter Filtering
 In addition to nested data filtering, you can also filter on specific data attributes within resources.  A filter parameter is any query string added to your URL that starts with `:`

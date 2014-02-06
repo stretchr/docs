@@ -41,13 +41,13 @@ curl -X DELETE https://account.stretchr.com/api/v1.1/project/resources?key=API_K
 To create a resource using JSON:
 
 ```
-curl -X POST --data "{\"name\":\"Laurie\"}" https://account.stretchr.com/api/v1.1/project/resources?key=API_KEY
+curl -X POST -H "Content-Type: application/json" --data "{\"name\":\"Laurie\"}" https://account.stretchr.com/api/v1.1/project/resources?key=API_KEY
 ```
 
 To create many resources using JSON:
 
 ```
-curl -X POST --data "[{\"name\":\"Laurie\"},{\"name\":\"Mat\"}]" https://account.stretchr.com/api/v1.1/project/resources?key=API_KEY
+curl -X POST -H "Content-Type: application/json" --data "[{\"name\":\"Laurie\"},{\"name\":\"Mat\"}]" https://account.stretchr.com/api/v1.1/project/resources?key=API_KEY
 ```
 
 ### Updating resources
@@ -55,7 +55,7 @@ curl -X POST --data "[{\"name\":\"Laurie\"},{\"name\":\"Mat\"}]" https://account
 To update a resource using JSON:
 
 ```
-curl -X PATCH --data "{\"name\":\"Different\"}" https://account.stretchr.com/api/v1.1/project/resources/resource-id?key=API_KEY
+curl -X PATCH -H "Content-Type: application/json" --data "{\"name\":\"Different\"}" https://account.stretchr.com/api/v1.1/project/resources/resource-id?key=API_KEY
 ```
 
 ### Replacing resources
@@ -63,5 +63,5 @@ curl -X PATCH --data "{\"name\":\"Different\"}" https://account.stretchr.com/api
 To replace a resource using JSON:
 
 ```
-curl -X PUT --data "{\"name\":\"Mat\"}" https://account.stretchr.com/api/v1.1/project/resources/resource-id?key=API_KEY
+curl -X PUT -H "Content-Type: application/json" --data "{\"name\":\"Mat\"}" https://account.stretchr.com/api/v1.1/project/resources/resource-id?key=API_KEY
 ```

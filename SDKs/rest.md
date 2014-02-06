@@ -1,4 +1,4 @@
-# Using the `curl` command
+# RESTful API interactions
 
 `curl` is a tool to transfer data from or to a server, and can be used to easily interact with Stretchr's RESTful API.
 

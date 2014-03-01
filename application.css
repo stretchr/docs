@@ -2,7 +2,7 @@
 
 body.custom-css {
 	font-family: 'Open Sans', sans-serif;
-	background: url(http://www.stretchr.com/img/header1.jpg) no-repeat bottom center;
+	background: #f9f9f9;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -55,8 +55,31 @@ code {
 	
 }
 
-.custom-css #categories span.glyphicon {
-	
+.custom-css #categories li.pages {
+	padding:0;
+	margin:0;
+	border: 1px solid #e8e8e8;
+	background:#fff;
+}
+
+.custom-css #categories li.page-list:first-child {
+	display:block;
+}
+
+.custom-css #categories li.pages .page-list {
+	margin:0;
+	padding:0;
+}
+
+.custom-css #categories .category-toggle {
+	background:#404040;
+	color:#f9f9f9;
+}
+
+.custom-css #categories a {
+	border-radius:0;
+	-moz-border-radius:0;
+	-webkit-border-radius:0;
 }
 
 .custom-css .nav li a:hover {

@@ -8,7 +8,7 @@ All fields will be returned by default, with the exception of some optional syst
 <tr><th>Value</th><th>Description</th><th>Example</th></tr>
 <tr><td>`~parent`</td><td>Including the parent will return the url for the parent resource.</td><td>`?include=~parent`</td></tr>
 <tr><td>`~path`</td><td>Include the path for the current resource in the response</td><td>`?include=~path`</td></tr>
-<tr><td>`~total`</td><td>Include the total in the response, useful when requesting a collection</td><td>`?total=true</td></tr>
+<tr><td>`~total`</td><td>Include the total in the response, useful when requesting a collection</td><td>`?total=true`</td></tr>
 </table>
 
 ## Excluding Data

@@ -24,7 +24,7 @@ GET /books
  
 ### Creating a resource
 
-To create a resource in Stretchr, just `POST` a document to the relevant path.  For example, to create a new book you could do this:
+To create a resource in Stretchr, just `POST` a json object to the relevant path.  For example, to create a new book you could do this:
 
 ```
 POST /books
@@ -38,11 +38,11 @@ POST /books
 
 Notice in the example above we specify a `"~id"` field, Stretchr allows you to do this if you want to specify the ID.  Omitting the field will cause Stretchr to generate a random ID for you.
 
-The response from the server will contain a change object describing 
+The response from the server will contain a change object describing any fields that were created on your behalf during the request.  For example, Stretchr will generate timestamps and an `~id` for you if one wasn't included.
 
 #### Timestamps
 
-By default Stretchr creates and manages _created_ and _updated_ timestamps (in Unix time).  You can prevent this behaviour by specifying `~exclude=~stamps` in the request parameters.
+By default Stretchr creates and manages _created_ and _updated_ timestamps (in Unix time).  You can prevent this behaviour by specifying `exclude=~stamps` in the request parameters.
 
 For example, to create the same book as above without timestamps, you would do:
 

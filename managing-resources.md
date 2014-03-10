@@ -72,7 +72,7 @@ POST /books
 ]
 ```
 
-The `~deltas` array in the change information will return with three objects, in the correct order, describing the IDs and timestamps for these new resources.  For more information see _Deltas_.
+The `~deltas` array in the change information will return with three objects, in the same order as the `POST`ed array, describing the IDs and timestamps for these new resources.  For more information see _Deltas_.
 
 ### Updating a resource
 

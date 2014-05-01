@@ -16,7 +16,9 @@ Stretchr provides a simple, dynamic aggregation API for use against your collect
 
 When using any of the calculation functions (`sum`,`min`,`max`,`avg`), the result key returned will be `<function>-<key>`. For example, `max(count)` will return `"max-count":162`.
 
-For an example of what the aggregation API can do, take a look at [San Diego Crime - Most Dangerous Communities](https://sandiego.stretchr.com/api/v1.1/crime/incidents.json?key=de0128c1cb7b70f583f56dd71da857df&agg=group(community).count()&order=-count) and [San Diego Crime - Most Dangerous Communities with Crime Type](https://sandiego.stretchr.com/api/v1.1/crime/incidents.json?key=de0128c1cb7b70f583f56dd71da857df&agg=group(community).uniqueSet(type).count()&order=-count)
+For an example of what the aggregation API can do, take a look at [San Diego Crime - Most Dangerous Communities][1] and [San Diego Crime - Most Dangerous Communities with Crime Type][2]
 
 The above links demonstrate the power of the aggregation framework. Simply typing your functions in a fluent manner allows you to construct queries against your data, gaining new insights instantly. Try typing out your own queries. I wonder what the most dangerous time of day is?
 
+[1]: https://sandiego.stretchr.com/api/v1.1/crime/incidents.json?key=de0128c1cb7b70f583f56dd71da857df&agg=group(community).count()&order=-count
+[2]: https://sandiego.stretchr.com/api/v1.1/crime/incidents.json?key=de0128c1cb7b70f583f56dd71da857df&agg=group(community).uniqueSet(type).count()&order=-count

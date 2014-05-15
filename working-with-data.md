@@ -92,12 +92,12 @@ Because Stretchr is RESTful, you interact with your data using the language of t
 
 
 ## Responses
-Stretchr responds to all requests with a standard response object, making it easy to parse out the data you need while also providing context.  Here is the standard response
+Stretchr responds to all requests with a standard response object, making it easy to parse out the data you need while also providing context. In the standard response, the `~data~ field is always an array, even for single requests. This makes it easier to work with programatically.  Here is the standard response:
 
 ```json
 {
   "~status": 201,
-  "~data": {"name":"Stretchr"},
+  "~data": [{"name":"Stretchr"}],
   "~context": "context",
   "~errors": [{"message":"This is how an error looks"}],
   "~changes": {"~changed": 1, "~updated": 1, "~deltas": 0, "~ids": ["1", "2", "3"]}
@@ -106,12 +106,12 @@ Stretchr responds to all requests with a standard response object, making it eas
 `~status` is the only guaranteed item in every response.
 
 ### Collection Response
-In addition to the standard response above, responses that contain many resources will also contain a standard object inside of `~data`
+Responses that contain multiple resources will have all the resources inside the `~data` field with additional metadata as sibling keys to the `~data` field.
 ```json
-"~data": {
+{
+  "~data": [{"name":"Tyler","~id":"1"},{"name":"Mat","~id":"1"}]
   "~count" : 1000,
   "~total" : 2000,
-  "~items" : [/* collection goes here */]
 }
 ```
 This will give you an idea of how many objects you were given, how many total objects matched your original request as well as the objects themselves.  This information is very useful for paging.

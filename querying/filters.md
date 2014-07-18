@@ -1,29 +1,39 @@
 # Filters
 Due to the schemaless nested data structure of stretchr, it allows you to take advantage of some unique querying features.  For example, if you've nested your data as such:
+
 ```
 /companies/stretchr/people/ryan
 /bands/beatles/people/paul
 /schools/cu-boulder/classes/physics/people/robert-paulson
 ```
+
 Then you have the ability to perform a global people search just by performing a `GET` on
+
 ```
 https://account.stretchr.com/api/v1.1/project/people
 ```
+
 Or, if you wanted to just get a list of people who sang in the Beatles, you could perform a `GET` on
+
 ```
 https://account.stretchr.com/api/v1.1/project/bands/beatles/people
 ```
+
 ## Parameter Filtering
 In addition to nested data filtering, you can also filter on specific data attributes within resources.  A filter parameter is any query string added to your URL that starts with `:`
 
 For example, to find all women from a collection of people you could do
+
 ```
 /people?:gender=female
 ```
+
 The general format to use for filters is
+
 ```
 :{fieldname}={match}
 ```
+
 | Type | Format | Description | Example |
 |---|---|---|---|
 | Equal | `:{field}={value}` | Matches if `{field}` matches `{value}` | `:name=Mat` |
@@ -38,6 +48,7 @@ The general format to use for filters is
 | Less than | `:{field}=<{value}` | Matches if `{field}` is less than {value} | `:count=<10` |
 | Greater than or equal to | `:{field}=>={value}` | Matches if `{field}` is greater than or equal to {value} | `:count=>=5` |
 | Less than or equal to | `:{field}=<={value}` | Matches if `{field}` is less than or equal to {value} | `:count=<=10` |
+
 ## Filtering within nested data
 Let's suppose you have a resource located at `/people/ryan` that looks like this:
 ```json

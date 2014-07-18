@@ -1,6 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans);
 
-body.custom-css {
+body {
 	font-family: 'Open Sans', sans-serif;
 	background: #f9f9f9;
 }
@@ -15,113 +15,107 @@ code {
 	color: #2e7292;
 }
 
-.custom-css .muted {
+.muted {
 	color:#000;
 }
 
 /*The title of the page overall*/
-.custom-css .title {
+.title {
 	padding-left: 50px;
-	background: url(http://www.stretchr.com/img/stretchr-logo.png) no-repeat left center;	
+	background: url(http://www.stretchr.com/img/stretchr-logo.png) no-repeat left center;
 	background-size: 50px 37px;
 }
 
-.custom-css .title a:hover {
+.title a:hover {
 	text-decoration:none;
 }
 
 /*Link inside the title */
-.custom-css .title a {
-	
+.title a {
+
 }
 
-.custom-css .muted {
-	
+.muted {
+
 }
 
 /*----- Sidebar -----*/
-.custom-css #categories {
+#categories {
 }
 
-.custom-css .nav li {
-	
+.nav li {
+
 }
 
-.custom-css .nav li a:hover {
+.nav li a:hover {
 	background: rgba(0, 0, 0, .25);
 }
 
-.custom-css #categories .non-root li {
-	
-}
 
-.custom-css #categories li.pages {
+#navigation ul.files {
 	padding:0;
 	margin:0;
 	border: 1px solid #e8e8e8;
 	background:#fff;
 }
 
-.custom-css #categories li.page-list:first-child {
+#navigation li {
+	margin:0;
+	padding:0;
 	display:block;
 }
 
-.custom-css #categories li.pages .page-list {
-	margin:0;
-	padding:0;
-}
-
-.custom-css #categories .category-toggle {
+#navigation .folder {
 	background:#404040;
 	color:#f9f9f9;
 }
 
-.custom-css #categories a {
+#navigation a {
 	border-radius:0;
 	-moz-border-radius:0;
 	-webkit-border-radius:0;
 }
 
-.custom-css .nav li a:hover {
-	
+.nav li a:hover {
+
 }
 
 /*----- Page ----*/
 
-.custom-css .page-template {
+.page-template {
 
 }
 
-.custom-css .page-template .page-container {
-	
+.page-template .page-container {
+
 }
 
-.custom-css .page-container .page {
-	
+.page-container .page {
+
 }
 
-.custom-css .page table {
-	
+.page table {
+
 }
 
-.custom-css .page table td, .custom-css .page table th {
-	
+.page table td, .page table th {
+
 }
 
-.custom-css .page table tr:nth-child(even) td {
-	
+.page table tr:nth-child(even) td {
+
 }
 
 
-.custom-css .page-template .page-info {
+.page-template .page-info {
 
 }
 
 /*----- Footer -----*/
-.custom-css .footer {
-	
+.footer {
+
 }
 
-.custom-css .footer a {
-	
+.footer a {
+
 }

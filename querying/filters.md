@@ -51,7 +51,8 @@ The general format to use for filters is
 
 ## Filtering within nested data
 Let's suppose you have a resource located at `/people/ryan` that looks like this:
-```json
+
+```javascript
 {
   "name": {
     "first":"ryan",
@@ -68,7 +69,8 @@ You could then filter for the result with
 
 ## Filtering within arrays
 Stretchr also allows you to search complicated structures inside arrays.  For example, if a resource located at `/companies/stretchr` looks like this
-```json
+
+```javascript
 {
   "name" : "stretchr",
   "employees" : [
@@ -93,7 +95,9 @@ Stretchr also allows you to search complicated structures inside arrays.  For ex
   ]
 }
 ```
+
 You could search for that result by running
+
 ```
 /companies?employees.name.first=ryan,tyler
 ```

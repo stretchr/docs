@@ -4,7 +4,7 @@ Specifying `versioning=1` or `versioning=true` in update or replace requests wil
 
 For example, given the following resource:
 
-```
+```http
 GET /people/mat
 
 {
@@ -17,7 +17,7 @@ GET /people/mat
 
 The following update will cause the existing resource to be created under `/people/mat/versions`.
 
-```
+```http
 PUT /people/mat?versioning=1
 
 {
@@ -27,7 +27,7 @@ PUT /people/mat?versioning=1
 
 The entire history is available:
 
-```
+```http
 GET /people/mat/versions
 
 [

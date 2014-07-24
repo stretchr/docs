@@ -1,6 +1,8 @@
 # Aggregation
 
-Stretchr provides a simple, dynamic aggregation API for use against your collections.
+Stretchr provides a simple, dynamic aggregation API for use against your collections.  To build up an aggregation, just append an `agg=function().function()` param to your api call.
+
+For example: `/people?agg=group(state,city).avg(age)` will group the data in your `people` collection by state and city and then give you the average age.
 
 <table>
 	<tr><th> Function </th><th> Description </th></tr>

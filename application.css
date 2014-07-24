@@ -2,6 +2,8 @@
 
 body {
 	font-family: 'Open Sans', sans-serif;
+	padding-bottom:0;
+	margin-bottom:0;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -19,10 +21,14 @@ code {
 }
 
 /*The title of the page overall*/
-.title {
-	padding-left: 50px;
-	background: url(http://www.stretchr.com/img/stretchr-logo.png) no-repeat left center;
-	background-size: 50px 37px;
+h1.title {
+	line-height:200px;
+	color: #f1f1f1;
+	font-size: 60px;
+	font-weight: bolder;
+	padding:0;
+	margin:0;
+	margin-bottom:20px;
 }
 
 .title a:hover {
@@ -31,7 +37,9 @@ code {
 
 /*Link inside the title */
 .title a {
-
+	color: #f1f1f1;
+	margin:0;
+	padding:0;
 }
 
 .muted {
@@ -126,9 +134,77 @@ code {
 
 /*----- Footer -----*/
 .footer {
-
+	padding:20px 0;
 }
 
 .footer a {
 
+}
+
+/*  CUSTOM */
+#header {
+	background: #202020;
+	color:#fff;
+	overflow:hidden;
+	font-size:16px;
+	height:80px;
+}
+
+#header .nav {
+	padding:20px 10px;
+}
+
+#header .nav a {
+	color:#f1f1f1;
+}
+
+#header .nav a:hover {
+	background:#404040;
+}
+
+#header .nav .active a {
+	background:#404040;
+}
+
+#header .logo {
+  height:30px;
+  margin:25px 0;
+}
+
+.docs-header {
+	background:#101010 url(http://www.stretchr.com/img/header-dark.jpg) no-repeat center bottom;
+	height:200px;
+	position:absolute;
+	top:80px;
+	right:0;
+	width:100%;
+}
+
+#search input {
+	margin:85px 0;
+	background: #404040;
+	color:#e8e8e8;
+	border-color: #101010;
+}
+
+#footer {
+	margin: 0;
+	padding:50px 0;
+}
+
+#footer .copyright {
+	text-align:right;
+}
+
+#footer {
+	background:#f9f9f9;
+	color:#404040;
+}
+
+#footer .copyright {
+  color: #999;
+}
+
+#footer a {
+	color:#404040;
 }

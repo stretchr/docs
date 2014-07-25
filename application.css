@@ -208,3 +208,34 @@ h1.title {
 #footer a {
 	color:#404040;
 }
+
+@media (max-width: 720px) {
+	.docs-header {
+		display:none;
+	}
+
+	.navbar-toggle {
+		z-index:10000;
+	}
+
+	h1.title {
+		color:#101010;
+		font-size: 40px;
+		line-height:1em;
+	}
+
+	h1.title a {
+		color: #101010;
+	}
+
+	#search input {
+		margin:0;
+		background: #f1f1f1;
+		border-color: #999;
+		color:#999;
+	}
+
+	#header {
+
+	}
+}
